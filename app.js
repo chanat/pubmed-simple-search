@@ -10,8 +10,8 @@ var pubmed = require('./pubmed.js');
 
 /* Start the app */
 pubmed.search({
-	search: 'Elizabeth Hartland',
+	search: 'parkinson',
 	database: 'pubmed',
 	retstart: 0,
-	retmax: 1000
+	retmax: 1
 });

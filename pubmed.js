@@ -51,7 +51,8 @@ var search = function(params) {
 			    	+ 'efetch.fcgi?db=' + json.database
 			    	+ '&query_key=' + QueryKey
 			    	+ '&WebEnv=' + WebEnv
-			    	+ '&rettype=xml&retmode=xml';
+			    	+ '&rettype=abstract&retmode=txt'
+			    	+ '&retstart=0&retmax=1000';
 
 
     			console.log("Please wait a moment, pulling data from " + json.database + " can take a while...");
@@ -59,9 +60,9 @@ var search = function(params) {
 			    request(requestUrl, function(error, response, body) {
 			        if (!error && response.statusCode == 200) {
 			        	//Write to file
-						fs.writeFile('./output.xml', body, function(err) {
+						fs.writeFile('./output.txt', body, function(err) {
 						    if(err)	console.log(err);
-						    else console.log('The file output.xml was saved!');
+						    else console.log('The file output.txt was saved!');
 						}); 
 
 			        }
